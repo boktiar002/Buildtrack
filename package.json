@@ -1,0 +1,25 @@
+{
+  "name": "buildtrack",
+  "private": true,
+  "description": "BuildTrack AI: construction progress and payment transparency portal for under-construction flats",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter api test",
+    "db:migrate": "pnpm --filter api db:migrate",
+    "db:deploy": "pnpm --filter api db:deploy",
+    "db:seed": "pnpm --filter api db:seed",
+    "db:reset": "pnpm --filter api db:reset",
+    "bootstrap": "pnpm install && pnpm db:deploy && pnpm db:seed",
+    "demo:check": "node scripts/demo-check.mjs"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}
